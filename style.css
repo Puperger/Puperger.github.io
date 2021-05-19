@@ -26,7 +26,8 @@ body {
   background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
-
+  font-size: 30px;
+}
 .column.side{
   width: 25%;
   padding: 10px
