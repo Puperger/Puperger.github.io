@@ -1,0 +1,13 @@
+.fraction {
+    display: inline-block;
+    text-align: center;
+}
+.fraction, .top, .bottom {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 11px;
+}
+.bottom {
+    border-top: 1px solid black;
+    display: block;
+}
