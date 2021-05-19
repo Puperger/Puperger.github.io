@@ -2,6 +2,7 @@ body {
   background-color: #1aff66;
   font-family: Helvetica;
   font-size: 20px;
+  margin: 0
 }
 
 .topnav {
@@ -19,4 +20,25 @@ body {
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.Title{
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+
+.column.side{
+  width: 25%;
+  padding: 10px
+  float: left;
+}
+.column.middle{
+  width: 25%;
+  padding: 10px
+  float: left;
+}
+@media screen and (max-width: 6000px) {
+  .column.side, column.middle{
+    width: 100%;
+  }
 }
