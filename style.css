@@ -28,12 +28,12 @@ body {
   text-align: center;
   font-size: 30px;
 }
-.column.side{
+.column side{
   width: 25%;
   padding: 10px
   float: left;
 }
-.column.middle{
+.column middle{
   width: 25%;
   padding: 10px
   float: left;
