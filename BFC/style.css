@@ -1,0 +1,13 @@
+div {
+    background: #DDDDDD;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+  }
+  
+  .codefield{
+    display:inline-block;
+    padding:0 0;
+  }
