@@ -60,8 +60,57 @@ function DecodePiece(type,orientation){ //Inputs: 0-6, 0-3 else we will get erro
     return out
 }
 
+function GetCol(colIndex){
+    var col;
+    switch (colIndex) {
+        case 1:
+            col = "#FF0000";
+            break;
+
+        case 2:
+            col = "#FF9900";
+            break;
+
+        case 3:
+            col = "#FFFF00";
+            break;
+        
+        case 4:
+            col = "#00FF00";
+            break;
+
+        case 5:
+            col = "#00FFFF";
+            break;
+
+        case 6:
+            col = "#0000FF";
+            break;
+
+        case 7:
+            col = "#FF00FF";
+            break;
+
+        case 8:
+            col = currentColor;
+            break;
+
+        default:
+            col = "#FFFFFF";
+            break;
+    }
+    return col;
+}
+
+function TopOut(){ //Return True if the game has topoutted
+    for(var i = 0 ; i <10 ; i++){
+        if (Board[2][i]!=0) return true;
+    }
+    return false;
+}
+
 function NewPiece(){
-    var PieceType = 2 //TODO MAKE IT RANDOM
+    var PieceType = Math.floor(Math.random() * 7); //Piecetype range = 0-6 (inclusive)
     var offsets = DecodePiece(PieceType,0)
     for (var i = 0 ; i < 4 ; i++){
         currOffset = offsets[i]
@@ -131,47 +180,8 @@ function DrawPiece(x, y, col){
 function DrawBoard(){
     for (var i=0 ; i<20 ; i++){
         for (var j=0 ; j<20 ; j++){
-            var col;
 
-            switch (Board[i][j]) {
-                case 1:
-                    col = "#FF0000";
-                    break;
-
-                case 2:
-                    col = "#FF9900";
-                    break;
-
-                case 3:
-                    col = "#FFFF00";
-                    break;
-                
-                case 4:
-                    col = "#00FF00";
-                    break;
-
-                case 5:
-                    col = "#00FFFF";
-                    break;
-
-                case 6:
-                    col = "#0000FF";
-                    break;
-
-                case 7:
-                    col = "#FF00FF";
-                    break;
-
-                case 8:
-                    col = currentColor;
-                    break;
-
-                default:
-                    col = "#FFFFFF";
-                    break;
-            }
-
-            DrawPiece(j,i,col);
+            DrawPiece(j,i,GetCol(Board[i][j]));
         }
     }
 
@@ -187,11 +197,17 @@ function DrawBoard(){
 function StartGame(){
     FillBoard();
     var Type = NewPiece();
+    currentColor = GetCol(Type+1);
     DrawBoard();
-    setInterval(function(){
+    var GameTimer = setInterval(function(){
         if(!DropPiece()){
+            if(TopOut()){
+                clearInterval(GameTimer)
+                return
+            }
             FixBlocks(Type+1)
             Type = NewPiece();
+            currentColor = GetCol(Type+1);
         }
         DrawBoard();
       }, 500);
