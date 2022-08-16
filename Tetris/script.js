@@ -375,21 +375,21 @@ function StartGame(){
   // Add event listener on keydown
 window.addEventListener('keydown', (event) => {
     var name = event.key;
-    if (name === 'a') {
+    if (name === 'a' || name === 'A') {
         shiftLeft()
         keyADown=true;
         return;
     }
-    if (name === 'd') {
+    if (name === 'd' || name === "D") {
         shiftRight()
         keyDDown=true;
         return;
     }
-    if (name === 'j') {
+    if (name === 'j' || name === "J") {
         RotateCCW(CurrentType)
         return;
     }
-    if (name === "l") {
+    if (name === "l" || name === "L") {
         RotateCW(CurrentType)
         return;
     }
