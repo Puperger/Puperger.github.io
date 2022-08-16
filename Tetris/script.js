@@ -8,7 +8,11 @@ var currentColor = "#888888"
 
 var Board = [];
 
+var keyADown = false;
+var keyDDown = false;
 
+var ACounter = 0;
+var DCounter = 0;
 
 
 var Pieces = [
@@ -119,6 +123,80 @@ function NewPiece(){
     return PieceType
 }
 
+function FixBlocks(type){
+    for (let i = 19; i >= 0 ; i--) {
+        for(let j = 0 ; j < 10 ; j++){
+            if(Board[i][j]==8){
+                Board[i][j]=type;
+            }
+        }
+    }
+}
+
+function checkRight(i,j){
+    if(j+1>9){
+        return false;
+    }
+    if(Board[i][j+1]!=0 && Board[i][j+1]!=8){
+        return false;
+    }
+    return true;
+}
+
+function shiftRight(){
+    for (let i = 0; i < 20; i++) {
+        for(let j = 0 ; j < 10 ; j++){
+            if (Board[i][j]==8){
+                if (!checkRight(i,j)){
+                    return false; //Return False if the Piece cannot be shifted
+                }
+            }
+        }      
+    }
+    for (let i = 19; i >= 0 ; i--) {
+        for(let j = 9 ; j >= 0 ; j--){
+            if (Board[i][j]==8){
+                Board[i][j+1]=8;
+                Board[i][j]=0;
+            }
+        }      
+    }
+    return true;
+} 
+
+
+function checkLeft(i,j){
+    if(j-1<0){
+        return false;
+    }
+    if(Board[i][j-1]!=0 && Board[i][j-1]!=8){
+        return false;
+    }
+    return true;
+}
+
+function shiftLeft(){
+    for (let i = 0; i < 20; i++) {
+        for(let j = 0 ; j < 10 ; j++){
+            if (Board[i][j]==8){
+                if (!checkLeft(i,j)){
+                    return false; //Return False if the Piece cannot be shifted
+                }
+            }
+        }      
+    }
+    for (let i = 19; i >= 0 ; i--) {
+        for(let j = 0 ; j < 10 ; j++){
+            if (Board[i][j]==8){
+                Board[i][j-1]=8;
+                Board[i][j]=0;
+            }
+        }      
+    }
+    return true;
+} 
+
+
 function CheckBelow(i,j){
     if(i+1>19){
         return false;
@@ -128,16 +206,6 @@ function CheckBelow(i,j){
         return false;
     }
     return true;
-}
-
-function FixBlocks(type){
-    for (let i = 19; i >= 0 ; i--) {
-        for(let j = 0 ; j < 10 ; j++){
-            if(Board[i][j]==8){
-                Board[i][j]=type;
-            }
-        }
-    }
 }
 
 
@@ -196,24 +264,73 @@ function DrawBoard(){
 
 function StartGame(){
     FillBoard();
+    var TickTimer = 0;
     var Type = NewPiece();
     currentColor = GetCol(Type+1);
     DrawBoard();
     var GameTimer = setInterval(function(){
-        if(!DropPiece()){
-            if(TopOut()){
-                clearInterval(GameTimer)
-                return
+        if (TickTimer==10){
+            TickTimer=0;
+            if(!DropPiece()){
+                if(TopOut()){
+                    clearInterval(GameTimer)
+                    return
+                }
+                FixBlocks(Type+1)
+                Type = NewPiece();
+                currentColor = GetCol(Type+1);
             }
-            FixBlocks(Type+1)
-            Type = NewPiece();
-            currentColor = GetCol(Type+1);
         }
+        if (keyADown){
+            ACounter++
+            if (ACounter==2){
+                ACounter=0
+                shiftLeft()
+                //SHIFT PIECE
+            }
+        }
+        if (keyDDown){
+            DCounter++
+            if (DCounter==2){
+                DCounter=0
+                shiftRight()
+                //SHIFT PIECE
+            }
+        }
+        TickTimer++;
         DrawBoard();
-      }, 500);
+      }, 50);
 }
+    //HOLY iNTENET, I THANK YOU, AM
+  // Add event listener on keydown
+window.addEventListener('keydown', (event) => {
+    var name = event.key;
+    if (name === 'a') {
+        shiftLeft()
+        keyADown=true;
+        return;
+    }
+    if (name === 'd') {
+        shiftRight()
+        keyDDown=true;
+        return;
+    }
 
-
+}, false);
+  // Add event listener on keyup
+  window.addEventListener('keyup', (event) => {
+    var name = event.key;
+    if (name === 'a') {
+        keyADown=false;
+        ACounter = 0
+        return;
+    }
+    if (name === 'd') {
+        keyDDown=false;
+        DCounter=0
+        return;
+    }
+  }, false);
 
 StartGame();
 }
