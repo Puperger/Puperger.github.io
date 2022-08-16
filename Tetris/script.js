@@ -5,6 +5,11 @@ var ctx = GameField.getContext("2d");
 
 var currentColor = "#888888"
 
+var CurrentType
+
+var currentOffset = [0,3]
+
+var currentRotation=0;
 
 var Board = [];
 
@@ -14,15 +19,16 @@ var keyDDown = false;
 var ACounter = 0;
 var DCounter = 0;
 
+//J = CCW // L = CW
 
 var Pieces = [
-    ["06c0"],       //S-Piece
-    ["02e0"],       //L-Piece
-    ["0660"],       //O-Piece
-    ["0630"],       //Z-Piece
-    ["00f0"],       //I-Piece
-    ["0470"],       //J-Piece
-    ["04e0"],       //T-piece
+    ["06c0","0462","0360","4620"],       //S-Piece
+    ["02e0","0622","0740","4460"],       //L-Piece
+    ["0660","0660","0660","0660"],       //O-Piece
+    ["0630","2640","0c60","0264"],       //Z-Piece
+    ["00f0","2222","0f00","4444"],       //I-Piece
+    ["0470","2260","0e20","0644"],       //J-Piece
+    ["04e0","04c4","00e4","0464"],       //T-piece
 ];
 
 function HexDigToBin(hex){
@@ -65,45 +71,17 @@ function DecodePiece(type,orientation){ //Inputs: 0-6, 0-3 else we will get erro
 }
 
 function GetCol(colIndex){
-    var col;
     switch (colIndex) {
-        case 1:
-            col = "#FF0000";
-            break;
-
-        case 2:
-            col = "#FF9900";
-            break;
-
-        case 3:
-            col = "#FFFF00";
-            break;
-        
-        case 4:
-            col = "#00FF00";
-            break;
-
-        case 5:
-            col = "#00FFFF";
-            break;
-
-        case 6:
-            col = "#0000FF";
-            break;
-
-        case 7:
-            col = "#FF00FF";
-            break;
-
-        case 8:
-            col = currentColor;
-            break;
-
-        default:
-            col = "#FFFFFF";
-            break;
+        case 1: return "#FF0000";
+        case 2: return "#FF9900";
+        case 3: return "#FFFF00";
+        case 4: return "#00FF00";
+        case 5: return "#00FFFF";
+        case 6: return "#0000FF";
+        case 7: return "#FF00FF";
+        case 8: return currentColor;
+        default: return "#FFFFFF";
     }
-    return col;
 }
 
 function TopOut(){ //Return True if the game has topoutted
@@ -113,14 +91,98 @@ function TopOut(){ //Return True if the game has topoutted
     return false;
 }
 
+
+function ClearRow(){
+    for(var i = 0 ; i < 20 ; i++){
+        var clear=true;
+        for (var j=0 ; j < 10 ; j++){
+            if (Board[i][j]==0){
+                clear=false;
+            }
+        }
+        if (clear==true){
+            for(var y = i-1 ; y >= 0 ; y--){
+                for (var x = 0 ; x < 10 ; x++){
+                    Board[y+1][x]=Board[y][x]
+                }
+            }
+        }
+    }
+}
+
 function NewPiece(){
+    currentOffset=[0,3]
     var PieceType = Math.floor(Math.random() * 7); //Piecetype range = 0-6 (inclusive)
     var offsets = DecodePiece(PieceType,0)
     for (var i = 0 ; i < 4 ; i++){
-        currOffset = offsets[i]
-        Board[0+currOffset[0]][3+currOffset[1]]=8
+        currBlockOffset = offsets[i]
+        Board[0+currBlockOffset[0]][3+currBlockOffset[1]]=8
     }
     return PieceType
+}
+
+function RotateCW(Piece){
+    var newRotation = (currentRotation-1)
+    if (newRotation < 0) newRotation+=4;
+    var blockOffsets=DecodePiece(Piece, newRotation)
+    for (var i = 0 ; i < 4 ; i++){
+        var currBlockOffset=blockOffsets[i]
+        var y = currentOffset[0]+currBlockOffset[0]
+        var x = currentOffset[1]+currBlockOffset[1]
+        if (x<0 || x>9 || y<0 ||y>19){
+            return //Piece would be OOB
+        }
+        if (Board[y][x]!=8 && Board[y][x]!=0){
+            return //Piece would collide with another one
+        }
+    }
+    //Clear all 8s
+    for(var i = 0 ; i<20 ; i++){
+        for (var j=0 ; j<20 ; j++){
+            if (Board[i][j]==8){
+                Board[i][j]=0;
+            }
+        }    
+    }
+    for (var i = 0 ; i < 4 ; i++){
+        var currBlockOffset=blockOffsets[i]
+        var y = currentOffset[0]+currBlockOffset[0]
+        var x = currentOffset[1]+currBlockOffset[1]
+        Board[y][x]=8
+    }
+    currentRotation=newRotation
+}
+
+function RotateCCW(Piece){
+    var newRotation = (currentRotation+1)
+    if (newRotation > 3) newRotation-=4;
+    var blockOffsets=DecodePiece(Piece, newRotation)
+    for (var i = 0 ; i < 4 ; i++){
+        var currBlockOffset=blockOffsets[i]
+        var y = currentOffset[0]+currBlockOffset[0]
+        var x = currentOffset[1]+currBlockOffset[1]
+        if (x<0 || x>9 || y<0 ||y>19){
+            return //Piece would be OOB
+        }
+        if (Board[y][x]!=8 && Board[y][x]!=0){
+            return //Piece would collide with another one
+        }
+    }
+    //Clear all 8s
+    for(var i = 0 ; i<20 ; i++){
+        for (var j=0 ; j<20 ; j++){
+            if (Board[i][j]==8){
+                Board[i][j]=0;
+            }
+        }    
+    }
+    for (var i = 0 ; i < 4 ; i++){
+        var currBlockOffset=blockOffsets[i]
+        var y = currentOffset[0]+currBlockOffset[0]
+        var x = currentOffset[1]+currBlockOffset[1]
+        Board[y][x]=8
+    }
+    currentRotation=newRotation
 }
 
 function FixBlocks(type){
@@ -161,6 +223,7 @@ function shiftRight(){
             }
         }      
     }
+    currentOffset[1]++;
     return true;
 } 
 
@@ -193,6 +256,7 @@ function shiftLeft(){
             }
         }      
     }
+    currentOffset[1]--;
     return true;
 } 
 
@@ -227,6 +291,7 @@ function DropPiece(){
             }
         }      
     }
+    currentOffset[0]++;
     return true;
 }
 
@@ -265,8 +330,8 @@ function DrawBoard(){
 function StartGame(){
     FillBoard();
     var TickTimer = 0;
-    var Type = NewPiece();
-    currentColor = GetCol(Type+1);
+    CurrentType = NewPiece();
+    currentColor = GetCol(CurrentType+1);
     DrawBoard();
     var GameTimer = setInterval(function(){
         if (TickTimer==10){
@@ -276,11 +341,16 @@ function StartGame(){
                     clearInterval(GameTimer)
                     return
                 }
-                FixBlocks(Type+1)
-                Type = NewPiece();
-                currentColor = GetCol(Type+1);
+                FixBlocks(CurrentType+1)
+                ClearRow()
+                currentRotation=0;
+                CurrentType = NewPiece();
+                currentColor = GetCol(CurrentType+1);
+                
             }
+            console.log(currentOffset)
         }
+/*
         if (keyADown){
             ACounter++
             if (ACounter==2){
@@ -296,7 +366,7 @@ function StartGame(){
                 shiftRight()
                 //SHIFT PIECE
             }
-        }
+        }*/
         TickTimer++;
         DrawBoard();
       }, 50);
@@ -315,22 +385,16 @@ window.addEventListener('keydown', (event) => {
         keyDDown=true;
         return;
     }
+    if (name === 'j') {
+        RotateCCW(CurrentType)
+        return;
+    }
+    if (name === "l") {
+        RotateCW(CurrentType)
+        return;
+    }
 
 }, false);
-  // Add event listener on keyup
-  window.addEventListener('keyup', (event) => {
-    var name = event.key;
-    if (name === 'a') {
-        keyADown=false;
-        ACounter = 0
-        return;
-    }
-    if (name === 'd') {
-        keyDDown=false;
-        DCounter=0
-        return;
-    }
-  }, false);
 
 StartGame();
 }
