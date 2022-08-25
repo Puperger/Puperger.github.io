@@ -335,6 +335,8 @@ function StartGame(){
     DrawBoard();
     var GameTimer = setInterval(function(){
         if (TickTimer==10){
+	    console.log(Board[2]==[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]);
+	    console.log(Board[2])
             TickTimer=0;
             if(!DropPiece()){
                 if(TopOut()){
@@ -348,25 +350,7 @@ function StartGame(){
                 currentColor = GetCol(CurrentType+1);
                 
             }
-            console.log(currentOffset)
         }
-/*
-        if (keyADown){
-            ACounter++
-            if (ACounter==2){
-                ACounter=0
-                shiftLeft()
-                //SHIFT PIECE
-            }
-        }
-        if (keyDDown){
-            DCounter++
-            if (DCounter==2){
-                DCounter=0
-                shiftRight()
-                //SHIFT PIECE
-            }
-        }*/
         TickTimer++;
         DrawBoard();
       }, 50);
@@ -393,7 +377,15 @@ window.addEventListener('keydown', (event) => {
         RotateCW(CurrentType)
         return;
     }
-
+    if (name === "s" || name === "S"){
+	    DropPiece();
+	    return;
+	}
+    if (name === " "){
+        for(var i = 0 ; i < 20 ; i++){
+            DropPiece();
+        }
+    }
 }, false);
 
 StartGame();

@@ -25,6 +25,11 @@ updateSize = function(w,h){
         thumbnails[i].style.height = ((boxW-10)*2/3).toString()+"px";
         thumbnails[i].style.width = (boxW-10).toString()+"px";
     }
+    var pictures = document.getElementsByClassName("Pic")
+    for (let i = 0 ; i < pictures.length ; i++){
+        pictures[i].style.height = (boxW-10).toString()+"px";
+        pictures[i].style.width = (boxW-10).toString()+"px";
+    }
     var titles = document.getElementsByClassName("title")
     //Decide on Font Size based on screen size
         for (let i = 0 ; i < titles.length ; i++){
