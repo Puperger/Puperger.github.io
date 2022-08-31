@@ -1,57 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cssfuncs.css">
-    <script src="scaleing.js"></script><!--Used to Scale the Squares-->
-    <title>Pupergers Website</title>
-    <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cssfuncs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="terminal.css">
+  <script src="scaleing.js"></script><!--Used to Scale the Squares-->
+  <script src="terminal.js"></script>
+  <title>Pupergers Website</title>
 </head>
 <body>
-    <h1 class="hCenter totalTitle">Welcome to my Website</h1>
-    <table>
-        <tr>
-            <td>
-                <a href="./posts/golden.html">
-                <div class="BoxText Box",id="Test">
-                    <img width="300" height="200" src="Unbenannt-1.png" class="Thumbnail">
-                    <p class="title">Golden Objects</p>
-                </div>
-                </a>
-            </td>
-            <td>
-                <a href="./Tetris/index.html">
-                <div class="Box">
-                    <img src="./Tetris.png" class="Pic">
-                </div>
-            </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="./BFC/index.html">
-                <div class="Box">
-                </div>
-                </a>
-            </td>
-            <td>
-                <div class="Box"></div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="Box"></div>
-            </td>
-            <td>
-                <div class="Box"></div>
-            </td>
-        </tr>
-    </table>
+  <div>
+    <header>
+      <a href="index.html"><span class="prefix">./</span>Puperger</a>
+      <a href="Tetris/index.html"><span class="prefix">./</span>Tetris</a>
+      <a href="BFC/index.html"><span class="prefix">./</span>BF Parser</a>
+    </header>
+  </div>
+  <div class="content">
+  </div>
+  <div class="terminal">
+    <code>
+
+    </code><code id="cmd"></code><span style="background-color: white;color: white;">_</span>
+  </div>
+
 </body>
 </html>

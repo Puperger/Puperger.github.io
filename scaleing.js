@@ -35,7 +35,9 @@ updateSize = function(w,h){
         for (let i = 0 ; i < titles.length ; i++){
             titles[i].style.marginTop = (boxW/12).toString()+"px";
         }
+
 }
+
 
 
 window.onload = codeAddress
