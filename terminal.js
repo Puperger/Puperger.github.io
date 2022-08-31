@@ -1,5 +1,10 @@
 Object.prototype.copy=function () {c = this.constructor();for (var a in this) {if (this.hasOwnProperty(a)) c[a] = this[a];}return c;}
 
+
+function updateScroll(){
+  var element = document.getElementById("terminal");
+  element.scrollTop = element.scrollHeight;
+}
   //function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
   let sleep = t => new Promise(r=>setTimeout(r,t));
   const FS = {
@@ -112,6 +117,7 @@ window.onload = _ => {
 let CMD_HISTORY = [];
 let hist_pos = 0;
 window.onkeydown = key => {
+    updateScroll();
   if(" qwertyuiopQWERTYUIOPasdfghjklASDFGHJKLzxcvbnmZXCVBNM/.,?><';:\"']}[{\\|+_=-0987654321@#$%^&*()`~".includes(key.key)){
   cmd.innerText += key.key;
   command += key.key;
@@ -163,6 +169,7 @@ window.onkeydown = key => {
     command = '';
     cmd.innerText = '';
     //code.innerHTML += command + "<br>";
+    updateScroll();
   }
   
 }
