@@ -335,8 +335,6 @@ function StartGame(){
     DrawBoard();
     var GameTimer = setInterval(function(){
         if (TickTimer==10){
-	    console.log(Board[2]==[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]);
-	    console.log(Board[2])
             TickTimer=0;
             if(!DropPiece()){
                 if(TopOut()){
