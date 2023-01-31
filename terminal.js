@@ -16,6 +16,9 @@ function updateScroll(){
             "Tetris":`To Check out Tetris, run <span>Tetris</span>`,
             "BFC": "To Check out BFC, run <span>BFC</span>"
           },
+          "blogs/": {
+            "test.txt": "Hi",
+          },
         },
       },
       "usr/": {},
@@ -72,7 +75,7 @@ const COMMANDS = {
     return Object.keys(Path()).map(x=>x.replace("/", '')).join("<br>");
   },
   "neofetch": _ => {
-    return `This is me. I'm a 15 year old boy with
+    return `This is me. I'm a 16 year old boy with
           a love for <span class="important">
           math, physics and informatics.</span>
           I am currently in my 11th School year
@@ -100,7 +103,7 @@ window.onload = _ => {
   code = document.querySelectorAll("code")[0];
   cmd = document.querySelectorAll("code")[1]
   code.innerHTML += PS1() + "neofetch<BR>" + `This is me. 
-          I'm a 15 year old boy with a love for <span class="important">
+          I'm a 16 year old boy with a love for <span class="important">
           math, physics and informatics</span>.
           I am currently in my 11th School year
           and have done some project that involved coding.
@@ -154,7 +157,8 @@ window.onkeydown = key => {
     hist_pos = 0;
     code.innerHTML += command + "<br>";
     if(command == '') return code.innerHTML += PS1()
-    if(command == 'Tetris') window.open("./Tetris/index.html", "_self")
+    if(command == 'Tetris') window.open("./Tetris/index.html", "_self");
+    else if(command == 'BFC') window.open("./BFC/index.html", "_self");
     else if(Object.keys(COMMANDS).includes(command.split(" ")[0])) {
       let args = command.split(" ");
       let arg0 = args.shift();
