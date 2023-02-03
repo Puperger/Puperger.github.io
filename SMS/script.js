@@ -4,7 +4,6 @@ var c = document.getElementById("Board");
 var ctx = c.getContext("2d");
 ctx.lineWidth = 2;
 ctx.font = "90px Arial";
-
 var coins = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 
 function drawBoard(){
@@ -21,7 +20,6 @@ function drawBoard(){
     }    
 }
 
-
 function drawCircle(x,y,type){
     if (type==0){
         ctx.fillStyle = "#dd2323";
@@ -35,18 +33,18 @@ function drawCircle(x,y,type){
     ctx.stroke();
     if (type==0){
         ctx.fillStyle = "#111111"
-        ctx.fillText("K", 200*x+72, 200*y+130)
+        ctx.fillText("1", 200*x+72, 200*y+130)
     }
     if (type==1){
         ctx.fillStyle = "#111111"
-        ctx.fillText("Z", 200*x+72, 200*y+130)
+        ctx.fillText("0", 200*x+72, 200*y+130)
     }
 }
 
 function flipCoin(x,y){
     var curCol = coins[x][y];
-    drawCircle(x, y, (curCol+1)%2);
-    coins[x][y] = (curCol+1)%2;
+    drawCircle(x, y, !curCol);
+    coins[x][y] = !curCol;
 }
 
 function getMousePosition(canvas, event) {
@@ -54,7 +52,7 @@ function getMousePosition(canvas, event) {
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
     return [x,y]
-    }
+}
 
 drawBoard();
 for (let i = 0 ; i < 4 ; i++){
@@ -72,5 +70,4 @@ c.addEventListener("mousedown", function(e)
         flipCoin(x, y);
     }
 });
-
 }
