@@ -11,15 +11,18 @@
     <div>
         <h2>Introduction</h2>
         <p>
-            In the following Post, I will tell you about a topic which I have recently studied about; Cassegrain Telescopes.
+            In the following Post, I will tell you about a topic which I have
+            recently studied about; Cassegrain Telescopes.
             They consist out of a parabolic primary mirror and a hyperbolic secondary mirror.
             The peabolid and the hyperbolid have the same focus point, which turns out to be really useful,
             as the incoming light can be bundled in a very short distance.
         </p>
         <h2>Function of the Telescope</h2>
         <p>
-            Incoming light into a telescope can be described as parallel light beams, as the ligthing source is mulitple light years away in most use cases. 
-            A reflection in a parabolid object results that all rays that come in parallel to the normal line which goes through the middle orientate themselfs
+            Incoming light into a telescope can be described as parallel light beams,
+            as the ligthing source is mulitple light years away in most use cases. 
+            A reflection in a parabolid object results that all rays that come in
+            parallel to the normal line which goes through the middle orientate themselfs
             to the focus point of the parabolid.
             On its way there it gets reflected exactly into the second focus point by a hyperbolic mirror.
             There the light gets bundled and concentrated into the eye of the observer.
@@ -27,6 +30,15 @@
         <h2>Visualizations of the Telescope</h2>
         <p>The following image has been created with GeoGebra and shows the function more in detail</p>
         <img src="./Cassegrain.png" width="320" height="240">   
+        <h2>How the visualization was made</h2>
+        <p>
+            As you can see, there are a total of 20 light rays coming from the right however, this has been made
+            variable by adding a slider allowing for up to 1000 rays which would form a very smooth image.
+            To add the coloring to each of these rays, the interval in which the rays lie has been defined as 1.
+            After that, I used the function x<sup>2</sup>,sin(πx) and (1-x)<sup>2</sup> for the RGB values
+            respectively. After that I just had to create some tangent lines at the points of intersection and
+            Then just flip the line.
+        </p>
     </div>
 </body>
 </html>

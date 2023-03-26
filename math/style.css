@@ -1,0 +1,72 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0rem;
+    overflow: hidden;
+    background-color: #222222;
+    font-family: fantasque;
+}
+@font-face{
+    font-family: fantasque;
+    src: url("../fantasquesansmono-regular.otf") format("opentype");
+}
+
+header{
+    overflow: hidden;
+}
+header a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+header a:hover {
+    color: #cccccc;
+}
+
+
+header .icon{
+    display: none;
+}
+
+
+.content {
+    max-width: 600px;
+    background-color: #999999;
+}
+.prefix {
+    color: #666666;
+}
+
+#PostSlider {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+#PostSlider > .post {
+    width: 40vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: 100% 50%;
+    /*-webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+    */
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 500%;
+}
+

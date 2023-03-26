@@ -13,12 +13,6 @@ var currentRotation=0;
 
 var Board = [];
 
-var keyADown = false;
-var keyDDown = false;
-
-var ACounter = 0;
-var DCounter = 0;
-
 //J = CCW // L = CW
 
 var Pieces = [

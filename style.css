@@ -20,6 +20,10 @@ header a {
     font-size: 17px;
 }
 
+header a:hover {
+    color: #cccccc;
+}
+
 
 header .icon{
     display: none;

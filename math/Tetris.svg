@@ -1,0 +1,19 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path style="fill:#fff" d="M0 0h200v200H0z"></path>
+  <path style="fill:#ff0" d="M0 120h40v40H0z"></path>
+  <path style="fill:#00f" d="M0 60h20v60H0z"></path>
+  <path style="fill:#00f" d="M19 60h21v20H19z"></path>
+  <path style="fill:#0f0" d="M60 120h40v21H60z"></path>
+  <path style="fill:#0f0" d="M80 100h40v21H80z"></path>
+  <path style="fill:orange" d="M60 140h60v20H60z"></path>
+  <path style="fill:orange" d="M100 120h20v21h-20z"></path>
+  <path style="fill:purple" d="M60 80h60v20H60z"></path>
+  <path style="fill:purple" d="M80 60h20v21H80z"></path>
+  <path style="fill:#0ff" d="M120 80h20v80h-20z"></path>
+  <path style="fill:#00f" d="M140 120h20v40h-20z"></path>
+  <path style="fill:#00f" d="M159 140h41v20h-41z"></path>
+  <path style="fill:red" d="M160 120h40v20h-40z"></path>
+  <path style="fill:red" d="M140 100h40v21h-40z"></path>
+  <path style="fill:orange" d="M60 20h20v60H60z"></path>
+  <path style="fill:orange" d="M40 20h21v20H40z"></path>
+</svg>
