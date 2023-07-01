@@ -62,6 +62,9 @@ header .icon{
     -ms-filter: blur(2px);
     filter: blur(2px);
     */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 h1 {
@@ -70,3 +73,18 @@ h1 {
     font-size: 500%;
 }
 
+#scrollbar{
+    width: 50vw;
+    height: 2vw;
+    border-radius: 1vw;
+    background-color: #cccccc;
+    position: absolute;
+    top: 90%;
+    left: 25%;
+}
+.slider{
+    width: 2vw;
+    height: 2vw;
+    border-radius: 1vw;
+    background-color: #555555;
+}

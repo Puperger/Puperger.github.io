@@ -16,6 +16,9 @@ function updateScroll(){
             "Tetris":`To Check out Tetris, run <span>Tetris</span>`,
             "BFC": "To Check out BFC, run <span>BFC</span>"
           },
+          "people/": {
+            "Komali": "<a href=\"https://komali.dev\">Click Here!</a>"
+          },
           "blogs/": {
             "test.txt": "Hi",
           },
@@ -70,6 +73,9 @@ const COMMANDS = {
     }
     return `cd: ${f}: No such file or directory`
     }
+  },
+  "komali": _ => {
+    return `<a href="https://komali.dev">Click here to visit Koamlis site</a>`
   },
   "ls": _ => {
     return Object.keys(Path()).map(x=>x.replace("/", '')).join("<br>");

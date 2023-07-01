@@ -1,4 +1,6 @@
 const track = document.getElementById("PostSlider");
+const slider = document.getElementsByClassName("slider")[0];
+
 var allowSliding = true;
 
 window.onmousedown = e => {
@@ -29,8 +31,11 @@ window.onmousemove = e => {
     for(const image of track.getElementsByClassName("post")){
         image.animate({
             objectPosition: `${nextPercentage+100}% 50%`,
-        }, {duration: 1200, fill:"forwards"});
+        }, {duration: 1800, fill:"forwards"});
     }
+    slider.animate({
+        transform: `translate(${(-nextPercentage)*48/100}vw, 0%)`,
+    }, {duration: 1200, fill:"forwards"});
 }
 
 function openPost(id){
@@ -50,7 +55,7 @@ function openPost(id){
             transform: `translate(-50%, -50%)`,
              gap: 0
         }, {duration: 1200, fill: "forwards"});
-       
+        //TODO Remove/Add slider when nessecairy
         allowSliding=false;
     }
     else{

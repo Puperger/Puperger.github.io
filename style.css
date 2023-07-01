@@ -9,6 +9,8 @@ body{
 
 header{
     overflow: hidden;
+    background-color: #66666625;
+    border-radius: 10px;
 }
 header a {
     float: left;
@@ -25,15 +27,78 @@ header a:hover {
 }
 
 
-header .icon{
+header .icon {
     display: none;
+    color: black;
 }
 
+@media screen and (max-width: 600px) {
+    header a:not(:first-child) {display: none;}
+    header a.icon {
+      float: right;
+      display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header.responsive {position: relative;}
+    header.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    header.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+}
+
+.background {
+    filter: brightness(50%);
+    /* filter: sepia(100%) saturate(300%) brightness(50%) hue-rotate(198deg); */
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 
 .content {
     max-width: 600px;
     background-color: #999999;
 }
+
+.fadein {
+    animation: normal fadein 1s linear;
+}
+
+
 .prefix {
     color: #666666;
 }
+
+
+
+#mouse-light{
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    pointer-events: none;
+    background-color: #ffffff22;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+@keyframes fadein {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+    
+}
+
