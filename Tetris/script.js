@@ -13,6 +13,9 @@ var currentRotation=0;
 
 var Board = [];
 
+var TileBag = [];
+var FilledTileBag = [0,1,2,3,4,5,6];
+
 //J = CCW // L = CW
 
 var Pieces = [
@@ -47,6 +50,20 @@ function HexDigToBin(hex){
             console.error("HexDigToBin - Bad Input")
             return [0,0,0,0]
     }
+}
+
+function shuffleArray(array) { //Fisher-Yates Shuffle
+    let currentIndex = array.length,  randomIndex;
+
+    while (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
 }
 
 function DecodePiece(type,orientation){ //Inputs: 0-6, 0-3 else we will get error
@@ -106,7 +123,12 @@ function ClearRow(){
 
 function NewPiece(){
     currentOffset=[0,3]
-    var PieceType = Math.floor(Math.random() * 7); //Piecetype range = 0-6 (inclusive)
+    //TileBag Logic
+    if (TileBag.length==0){ 
+        TileBag = shuffleArray(FilledTileBag);
+    }
+    var PieceType = TileBag[0]; //Piecetype range = 0-6 (inclusive)
+    TileBag = TileBag.slice(1);
     var offsets = DecodePiece(PieceType,0)
     for (var i = 0 ; i < 4 ; i++){
         currBlockOffset = offsets[i]
