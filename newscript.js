@@ -8,7 +8,7 @@ function myFunction() {
   } 
 
 
-window.onload = (event) => {
+/*window.onload = (event) => {
     const conn1 = document.getElementById("connection1");
     const ctx1 = conn1.getContext("2d");
 
@@ -30,4 +30,4 @@ window.onload = (event) => {
     ctx1.stroke();
 
     ctx1.fillRect(247,190,6,310)
-}
+}*/
