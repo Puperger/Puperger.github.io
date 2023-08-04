@@ -334,6 +334,16 @@ function DrawBoard(){
         }
     }
 
+    // Draw seperating Lines
+    ctx.fillStyle="#000000"
+    for (var i=0 ; i<19 ; i++){
+        ctx.fillRect(0, i*20+29.5, 220, 1);
+    }
+
+    for (var i=0 ; i<9 ; i++){
+        ctx.fillRect(i*20+29.5, 0, 1, 420);
+    }
+
     //Draw the Border
     ctx.fillStyle="#000000"
     ctx.fillRect(0,0,220,10)

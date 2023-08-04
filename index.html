@@ -7,46 +7,59 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="cssfuncs.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="terminal.css">
   <script src="scaleing.js"></script><!--Used to Scale the Squares-->
-  <script src="terminal.js"></script>
-  <script src="script.js"></script>
+  <script src="newscript.js"></script>
 
   <title>Puperger's Homepage</title>
   <link rel="icon" type="image/x-icon" href="/math/Tetris.svg"> 
 </head>
 <body>
-  <img src="./images/13.png" id="bg_img" class="background fadein" />
-  <div>
-    <header id="header" class="head">
-      <a href="index.html"><span class="prefix">./</span>Puperger</a>
-      <a href="Tetris/index.html"><span class="prefix">./</span>Tetris</a>
-      <a href="BFC/index.html"><span class="prefix">./</span>BF Parser</a>
-      <!--<a href="Cassegrain/index.html"><span class="prefix">./</span>Math</a>-->
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </header>
-  </div>
-
-  <!--Circle following cursor-->
-  <div id="mouse-light"></div>
-  <div class="content">
-  </div>
-    <div class="terminal" id="terminal">
-      <code>
-
-      </code>
-      <code id="cmd">
-      </code>
-      <span style="background-color: white;color: white;">_</span>
+    <img src="./images/13.png" id="bg_img" class="background fadein" />
+    <div>
+        <header id="header" class="head">
+            <a href="index.html"><span class="prefix">./</span>Puperger</a>
+            <a href="Tetris/index.html"><span class="prefix">./</span>Tetris</a>
+            <a href="BFC/index.html"><span class="prefix">./</span>BF Parser</a>
+            <!--<a href="Cassegrain/index.html"><span class="prefix">./</span>Math</a>-->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </header>
     </div>
-    <div class="news" style="margin: auto; max-width: 600px;
-        color: #FFFFFF;">
-       Note that this Site is still in its Alpha phase and mostly just
-       for  me to upload my projects to the web.
+    <!--Main Content-->
+    <div id="introduction" class="infobox">
+        <p>
+            Hi, I'm Puperger, 16 years old and am a matemathics nerd. I'm also a fan of science
+            in general and enjoy coding in my free time. I also do some photography from
+            time to time. Feel free to look around on my Website.
+        </p>
     </div>
+    <!--<canvas id="connection1" width="1000" height="500"></canvas>-->
+    <div class="PictureLine">
+            <div id="pictures" class="infobox">
+            <p>
+                Photography. Capturing the beauty of something in some (a lot of) pixels.
+                I'm using a Canon EOS 80D and you can find some images besides this infobox.
+                If you have questions about any of theese pictures feel free to send me an
+                E-Mail <a href="mailto:puperger@gmail.com">here</a>.
+            </p>
+        </div>
+        <div id="demPic">
+            <img 
+                src="./IMG_1232.jpg"
+                alt="A lonely walk"
+                width="100%"
+            >
+        </div>
+    </div>
+    <div id="code" class="infobox">
+        <p>I also am a fan of Coding and use Python, C++, HTML, CSS and JavaScript to 
+        realize my ideas. You can find some of my projects on my GitHub page
+        <a href="https://github.com/Puperger">Here</a> . This Website also is
+                sort of a Project hub for me. You can find some of my projects in the Topbar.
 
+        </p>
+    </div>
 </body>
 </html>
 
