@@ -1,9 +1,8 @@
 @font-face {
     font-family: asmr;
-    src: url(ASMR-Regular.ttf);
+    src: url(ASMRmono-Regular.ttf);
 }
 
 body{
     font-family: asmr;
-    
 }
