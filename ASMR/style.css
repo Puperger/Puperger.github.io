@@ -13,17 +13,24 @@ body{
 }
 
 .header{
-    position:sticky;
+    position:fixed;
     top:0px;
     margin:0px;
     height:80px;
+    width:100%;
     box-shadow: 0 0 7px;
     background-color:white;
+    display:table;
+    table-layout:fixed;
 }
 
 .header-link {
     height:100%;
-    display:inline-block;
+    display:table-cell;
+}
+
+tbody{
+    display:block;
 }
 
 img {
