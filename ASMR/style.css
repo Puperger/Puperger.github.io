@@ -5,4 +5,28 @@
 
 body{
     font-family: asmr,Arial, Helvetica, sans-serif;
+    margin:0;
+}
+
+#main {
+    margin:10px;
+}
+
+.header{
+    position:sticky;
+    top:0px;
+    margin:0px;
+    height:80px;
+    box-shadow: 0 0 7px;
+    background-color:white;
+}
+
+.header-link {
+    height:100%;
+    display:inline-block;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
 }
