@@ -30,6 +30,11 @@ body{
     height:80px;
     width:80px;
     display:table-cell;
+    transition-duration:0.42s;
+}
+
+.header-logo:hover {
+    transform: rotate(360deg);
 }
 
 .header-link {
@@ -40,11 +45,12 @@ body{
     transition-duration: 0.42s;
     font-size:25px;
     text-decoration:none;
+    color:black;
 }
 
 .header-link:hover {
     background-color:red;
-    font-size:35px;
+    font-size:32px;
 }
 
 tbody{
