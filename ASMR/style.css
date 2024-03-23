@@ -9,7 +9,18 @@ body{
 }
 
 #main {
-    margin:10px;
+    margin-top:10px;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+a {
+    color: red;
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:underline;
 }
 
 .header{
@@ -51,6 +62,7 @@ body{
 .header-link:hover {
     background-color:red;
     font-size:32px;
+    text-decoration:none;
 }
 
 tbody{
@@ -60,4 +72,8 @@ tbody{
 img {
     max-width: 100%;
     max-height: 100%;
+}
+
+.resource-link {
+    font-size: 40px;
 }
