@@ -9,6 +9,7 @@ h1,h2,h3 {
 
 body{
     font-family: asmr,Arial, Helvetica, sans-serif;
+    font-size:20px;
     margin:0;
 }
 
@@ -117,14 +118,8 @@ th {
     .header-link:hover {
         font-size:16px;
     }
-}
-
-@media screen and (max-width: 850px) {
-    .header-link {
-        font-size:14px;
-    }
-    .header-link:hover {
-        font-size:16px;
+    body {
+        font-size:18px;
     }
 }
 
@@ -135,6 +130,9 @@ th {
     .header-link:hover {
         font-size:13px;
     }
+    body {
+        font-size:16px;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -143,5 +141,8 @@ th {
     }
     .header-link:hover {
         font-size:8px;
+    }
+    body {
+        font-size:14px;
     }
 }
