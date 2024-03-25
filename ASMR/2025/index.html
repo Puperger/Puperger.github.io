@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/ASMR/style.css">
     <link rel="icon" type="image/x-icon" href="/ASMR/pictures/favicon.ico">
+    <script src="/ASMR/yay.js"></script>
     <title>ASMR 2025</title>
 </head>
 <body>
@@ -15,7 +16,8 @@
         <a class="header-link" href="/ASMR/results">Results</a>
         <a class="header-link" href="/ASMR/problems">Problems</a>
         <a class="header-link" href="/ASMR/ach.html">Ach</a>
-        <a class="header-link" href="/ASMR/yay.html">Yay</a>
+        <span type="button" class="header-link" href="/ASMR/yay.html" onclick="yay(0);">Yay</span>
+        <audio id="yay" src="/ASMR/yay.mp3" onended="yay(1);"></audio>
     </div>
 
     <div id="main">
