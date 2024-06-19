@@ -6,3 +6,15 @@ function myFunction() {
       x.className = "head";
     }
   } 
+
+  $('#projects').slick({
+    dots: false,
+    arrows: true,
+    mobileFirst: true,
+    responsive: [
+        {
+          breakpoint: 600,
+          settings: "unslick",
+        }
+      ]
+    });

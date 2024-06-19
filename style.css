@@ -108,33 +108,35 @@ header .icon {
     border-radius: 2vw;
     padding: 2vw;
     max-width: 900px;
-}
-
-.project{
-    margin-top: 1vh;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    height: 32vw;
-    justify-content: center;
-    background-color: #c4c4c400;
-    border-radius: 2vw;
-    aspect-ratio: 3/4;
+    overflow: hidden; /* Verhindert Überlaufen */
 }
 
 #projects{
     align-items: center;
     align-content: center;
     align-self: center;
-    display: flex;
+    display: grid;
     object-fit: contain;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between; /* Platz zwischen den Projekten */
 }
-
-
-/*Flip Cards*/
 
 .project{
+    margin: 2%;
+    height: 32vw;
+    min-height: 0;
+    justify-content: center;
+    background-color: #c4c4c400;
+    border-radius: 2vw;
+    aspect-ratio: 3/4;
     perspective: 1000px;
+    max-width: 95%; /* Maximale Breite der Projekte */
+    max-height: 400px; /* Maximale Höhe der Projekte */
+    box-sizing: border-box;
 }
+
+
+
 
 .flip-card-inner {
   position: relative;
@@ -181,50 +183,28 @@ header .icon {
     margin-right: 1vw;
 }
 
-#main {
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 20px;
-    overflow: hidden; /* Verhindert Überlaufen */
-}
 
-/* Projekte-Div anpassen */
-#projects {
-    display: flex;
-    justify-content: space-between; /* Platz zwischen den Projekten */
-    flex-wrap: wrap; /* Projekte umbrechen, wenn sie nicht in eine Reihe passen */
-}
-
-/* Einzelne Projekt-Divs */
-.project {
-    flex: 1 1 30%; /* Feste Breite für die Projekte */
-    max-width: 30%; /* Maximale Breite der Projekte */
-    max-height: 400px; /* Maximale Höhe der Projekte */
-    box-sizing: border-box;
-    margin: 10px; /* Abstand zwischen den Projekten */
-}
 
 .project img {
     max-width: 100%;
     height: auto;
 }
 
-/* Only show the first project on small screens */
-@media screen and (max-width: 800px) {
-   .project {
-    max-width: 100%; /* Take up full width */
-    width: 100%;
-    max-height: none; /* Remove the max-height restriction */
-    margin: 10px 0; /* Remove side margins */
-}
-
-/* Hide all but the first project */
-.project:nth-child(n+2) {
-    display: none;
-}
-
-    .die {
-        display: none;
+@media only screen and (max-width: 800px) {
+    #projects {
+        grid-template-columns: 1fr;
+    }
+    .project{
+        margin: 2%;
+        height: 96vw;
+        min-height: 0;
+        justify-content: center;
+        background-color: #c4c4c400;
+        border-radius: 2vw;
+        aspect-ratio: 3/4;
+        perspective: 1000px;
+        max-width: 95%; /* Maximale Breite der Projekte */
+        max-height: 96vw; /* Maximale Höhe der Projekte */
+        box-sizing: border-box;
     }
 }
-
