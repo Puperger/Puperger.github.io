@@ -207,4 +207,9 @@ header .icon {
         max-height: 96vw; /* Maximale Höhe der Projekte */
         box-sizing: border-box;
     }
+
+    .inactive{
+        display: none;
+    }
 }
+
