@@ -209,17 +209,22 @@ header .icon {
     height: auto;
 }
 
-/* Medienabfragen für unterschiedliche Bildschirmgrößen */
-@media (max-width: 768px) {
-    .project {
-        flex: 1 1 45%; /* Breitere Projekte bei kleineren Bildschirmen */
-        max-width: 45%; /* Maximale Breite der Projekte */
+/* Only show the first project on small screens */
+@media screen and (max-width: 800px) {
+   .project {
+    max-width: 100%; /* Take up full width */
+    width: 100%;
+    max-height: none; /* Remove the max-height restriction */
+    margin: 10px 0; /* Remove side margins */
+}
+
+/* Hide all but the first project */
+.project:nth-child(n+2) {
+    display: none;
+}
+
+    .die {
+        display: none;
     }
 }
 
-@media (max-width: 480px) {
-    .project {
-        flex: 1 1 100%; /* Projekte nehmen die gesamte Breite bei sehr kleinen Bildschirmen */
-        max-width: 100%; /* Maximale Breite der Projekte */
-    }
-}
