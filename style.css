@@ -138,13 +138,13 @@ body{
 }
 
 
-
+/*
 .project img {
     height: auto;
     max-width: 100%;
 
-}
-/*
+}*/
+
 @media only screen and (max-width: 800px) {
     #projects {
         grid-template-columns: 1fr;
@@ -168,4 +168,3 @@ body{
     }
 }
 
-*/
