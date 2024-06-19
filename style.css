@@ -7,52 +7,6 @@ body{
     src: url("fantasquesansmono-regular.otf") format("opentype");
 }
 
-header{
-    overflow: hidden;
-    background-color: #66666625;
-    border-radius: 10px;
-}
-header a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-header a:hover {
-    color: #cccccc;
-}
-
-
-header .icon {
-    display: none;
-    color: black;
-}
-
-@media screen and (max-width: 600px) {
-    header a:not(:first-child) {display: none;}
-    header a.icon {
-      float: right;
-      display: block;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    header.responsive {position: relative;}
-    header.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    header.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-}
 
 .background {
     filter: brightness(50%);
@@ -186,10 +140,11 @@ header .icon {
 
 
 .project img {
-    max-width: 100%;
     height: auto;
-}
+    max-width: 100%;
 
+}
+/*
 @media only screen and (max-width: 800px) {
     #projects {
         grid-template-columns: 1fr;
@@ -203,8 +158,8 @@ header .icon {
         border-radius: 2vw;
         aspect-ratio: 3/4;
         perspective: 1000px;
-        max-width: 95%; /* Maximale Breite der Projekte */
-        max-height: 96vw; /* Maximale Höhe der Projekte */
+        max-width: 95%; 
+        max-height: 96vw; 
         box-sizing: border-box;
     }
 
@@ -213,3 +168,4 @@ header .icon {
     }
 }
 
+*/
