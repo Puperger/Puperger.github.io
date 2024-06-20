@@ -78,7 +78,7 @@ body{
 .project{
     margin: 2%;
     height: 32vw;
-    min-height: 0;
+    min-height: 32vw;
     justify-content: center;
     background-color: #c4c4c400;
     border-radius: 2vw;
