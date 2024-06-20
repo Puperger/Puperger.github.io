@@ -87,6 +87,20 @@ body{
     max-width: 95%; /* Maximale Breite der Projekte */
     max-height: 400px; /* Maximale Höhe der Projekte */
     box-sizing: border-box;
+    @supports not (aspect-ratio: 16 / 9) {
+    &::before {
+      float: left;
+      padding-top: 75%;
+      content: "";
+    }
+
+
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }};
+    
 }
 
 
@@ -162,6 +176,8 @@ body{
         box-sizing: border-box;
     }
 
-
+    .inactive{
+        display: none;
+    }
 }
 
