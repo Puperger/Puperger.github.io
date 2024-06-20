@@ -74,24 +74,20 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between; /* Platz zwischen den Projekten */
     max-width: 900px;
-    width: 100%;
-    gap: 2%;
 }
 
 .project{
-    /* margin: 2%; */
-    /* height: 32vw; */
-    /* max-width: calc(min(95%,300px)); */ /* Maximale Breite der Projekte */
-    /* max-height: 400px; */ /* Maximale Höhe der Projekte */
+    margin: 2%;
+    height: 32vw;
+    max-width: calc(min(95%,300px)); /* Maximale Breite der Projekte */
+    max-height: 400px; /* Maximale Höhe der Projekte */
     justify-content: center;
     background-color: #c4c4c400;
     border-radius: 2vw;
-    width: 100%;
+    width: calc(32vw * 3/4);
     perspective: 1000px;
+
     box-sizing: border-box;
-    position: relative;
-    height: 0;
-    padding-bottom: 133%; 
 }
 
 
@@ -106,10 +102,6 @@ body{
   transition: transform 0.8s;
   transform-style: preserve-3d;
   border-radius: 2vw;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -159,16 +151,17 @@ body{
         grid-template-columns: 1fr;
     }
     .project{
-        /* margin: 2%; */
-        /* height: 96vw; */
-        /* max-width: 300px; */
+        margin: 2%;
+        height: 96vw;
+        max-width: 300px; 
         min-height: 0;
         justify-content: center;
         background-color: #c4c4c400;
         border-radius: 2vw;
-        /* width: calc(96vw * 3/4); */
+        width: calc(96vw * 3/4);
         perspective: 1000px;
-        /* max-height: 400px; */
+        
+        max-height: 400px; 
         box-sizing: border-box;
     }
 
