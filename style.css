@@ -73,19 +73,20 @@ body{
     object-fit: contain;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between; /* Platz zwischen den Projekten */
+    max-width: 900px;
 }
 
 .project{
     margin: 2%;
     height: 32vw;
-    min-height: 32vw;
+    max-width: calc(min(95%,300px)); /* Maximale Breite der Projekte */
+    max-height: 400px; /* Maximale Höhe der Projekte */
     justify-content: center;
     background-color: #c4c4c400;
     border-radius: 2vw;
     width: calc(32vw * 3/4);
     perspective: 1000px;
-    max-width: 95%; /* Maximale Breite der Projekte */
-    max-height: 400px; /* Maximale Höhe der Projekte */
+
     box-sizing: border-box;
 }
 
@@ -152,14 +153,15 @@ body{
     .project{
         margin: 2%;
         height: 96vw;
+        max-width: 300px; 
         min-height: 0;
         justify-content: center;
         background-color: #c4c4c400;
         border-radius: 2vw;
         width: calc(96vw * 3/4);
         perspective: 1000px;
-        max-width: 95%; 
-        max-height: 96vw; 
+        
+        max-height: 400px; 
         box-sizing: border-box;
     }
 
