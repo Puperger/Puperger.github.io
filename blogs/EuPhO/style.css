@@ -78,19 +78,6 @@ body{
     gap: 2%;
 }
 
-#blogs{
-    align-items: center;
-    align-content: center;
-    align-self: center;
-    display: grid;
-    object-fit: contain;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-between; /* Platz zwischen den Projekten */
-    max-width: 900px;
-    width: 100%;
-    gap: 2%;
-}
-
 .project{
     /* margin: 2%; */
     /* height: 32vw; */
@@ -169,9 +156,6 @@ body{
 
 @media only screen and (max-width: 800px) {
     #projects {
-        grid-template-columns: 1fr;
-    }
-    #blogs{
         grid-template-columns: 1fr;
     }
     .project{
