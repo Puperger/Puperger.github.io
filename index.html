@@ -1,95 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="cssfuncs.css">
-
-
-  <title>Puperger's Homepage</title>
-  <link rel="icon" type="image/x-icon" href="/math/Tetris.svg"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fynn Krebser</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
 </head>
 <body>
-    <img src="./images/13.png" id="bg_img" class="background fadein" />
-    <!--Main Content-->
-    <div id="main">
-        <h1>Hi! I'm Puperger</h1><br>
-        I'm a student from Switzerland who just graduated from high school and enjoys doing mathematics and physics. This
-        summer I will be attending the European Physics Olympiad in Georgia which is a highlight of my
-        year. I also enjoy programming and have created a few projects which you can find on this website.
-
-        <hr>
-        <h2>Projects</h2>
-        <div id="projects">
-        <div class="project active">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                <h3>Tetris</h3>
-                <img src="math/Tetris.svg" width="200px" height="200px" alt="Tetris" style="width:100%">
-                </div>
-                <div class="flip-card-back" style="cursor: pointer;" onclick="window.location='./Tetris/index.html';">
-                <p>A simple Tetris game made with HTML, CSS and JavaScript. It is a fun project I made over a
-                weekend.</p>
-                </div>
-            </div>
-        </div>
-        <div class="project inactive">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                <h3>Notes</h3>
-                <img src="IMG_1232.jpg" width="2048px" height="1365px" alt="A Bridge in Amsterdam" style="width:100%;margin-top: 13%;">
-                </div>
-                <div class="flip-card-back die" style="cursor: pointer;" onclick="window.location='./Notes/index.html';">
-                <p>Here you can find some Notes I once wrote</p>
-                </div>
-            </div>
-        </div>
-        <div class="project inactive">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                <h3>ASMR</h3>
-                <img src="ASMR/pictures/logocircle.png" width="1059px" height="1059px" alt="ASMR" style="width:100%">
-                </div>
-                <div class="flip-card-back" style="cursor: pointer;" onclick="window.location='./ASMR/index.html';">
-                <p><b>A</b>mazing <b>S</b>wiss <b>M</b>athematical <b>R</b>evenge, the website to the most fun contest ever!</p>
-                </div>
-            </div>
-        </div>
-        </div>
-        <p class="hCenter">Find all my projects here [add link]</p>
-        <hr>
-        <h2>Blogs</h2>
-        <div id="blogs">
-        <!--
-        <div class="project active">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                <h3>Visit at CERN</h3>
-                <img src="math/Tetris.svg" width="200px" height="200px" alt="CERN" style="width:100%">
-                </div>
-                <div class="flip-card-back" style="cursor: pointer;" onclick="window.location='./blogs/Cern/index.html';">
-                <p>Visit at CERN that is going to happen soon™.</p>
-                </div>
-            </div>
-        </div>-->
-         <div class="project active">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                <h3>EuPhO 2024</h3>
-                <img src="images/eupho.jpg" width="200px" height="200px" alt="CERN" style="width:100%;margin-top: 13%;">
-                </div>
-                <div class="flip-card-back" style="cursor: pointer;" onclick="window.location='./blogs/EuPhO/index.html';">
-                <p>My experience as a participant at the European Physics Olympiad 2024.</p>
-                </div>
-            </div>
-        </div>
-       </div>
-
-        <p class="hCenter">I guess I need to start writing stuff...</p>
-        </div>
+    <div id="title">
+        <h1>Fynn Krebser</h1>
+        <h2 id="animate-title"></h2>
+        <p>
+            Welcome to my personal webpage! Here, you can find different notes
+            that I took over the years.
+        </p>
     </div>
+    <div id="Notes">
+        <h2>Notes</h2>
+        <div class="links">
+            <h4>Free Time Reading</h4>
+            <ul>
+		    <li><a href="./notes/electromagnetism.pdf">Electromagnetism</a></li>
+            <li><a href="./notes/qm.pdf">Quantum Mechanics</a></li>
+            </ul> 
+            <h4>University Notes</h4>
+        Bachelor Semester II
+        <ul>
+            <li><a href="./notes/analysis_II.pdf">Analysis II</a></li>
+            <li><a href="./notes/data_analysis.pdf">Datenanalyse in der Physik</a></li>
+            <li><a href="./notes/dsa.pdf">Datenstrukturen und Algorithmen</a></li>
+            <li><a href="./notes/linear_algebra.pdf">Lineare Algebra</a></li>
+            <li><a href="./notes/physik_II.pdf">Physik II</a></li>
+        </ul>
+
+       Bachelor Semester I
+	    <ul>
+            <li><a href="./notes/analysis_I.pdf">Analysis I</a> (<a href="./summaries/analysis_I.pdf">Summary</a>)</li>
+		    <li><a href="./notes/linear_algebra.pdf">Lineare Algebra</a></li>
+            <li><a href="./notes/physik_I.pdf">Physik I</a></li>
+            <li><a href="./notes/informatik.pdf">Informatik</a> (<a href="./cheatsheets/informatik.pdf">Cheat sheet</a>)</li>
+            <li><a href="./notes/using_r_I.pdf">Using R for Data Analysis & Graphics (Part I)</a></li>
+	    </ul>
+        <h4>Lecture Notes</h4>
+        Physics Olympiad
+        <ul>
+            <li><a href="./teaching_2026_electromagnetism.pdf">Electromagnetism 2026</a></li>
+            <li><a href="./teaching_2026_data_analysis.pdf">Experimental Training 2026</a></li>
+
+        </ul>
+        </div>
+        
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
-
