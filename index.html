@@ -4,81 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fynn Krebser</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <meta name="description" content="Notes, summaries and teaching materials from Fynn Krebser.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="title">
-        <h1>Fynn Krebser</h1>
-        <h2 id="animate-title"></h2>
-        <p>
-            Welcome to my personal webpage! Here, you can find different notes
-            that I took over the years. 
-        </p>
-    </div>
-    <div id="TA">
-        <h2>Teaching Assistant</h2>
-        <div class="links">
-            <h4>Informatik (HS26)</h4>
-            <ul class="TA">
-                <li class="TA">1. Woche: Slides, Notizen</li>
-<!--
-                <li class="TA">2. Woche: Slides, Notizen</li>
-                <li class="TA">3. Woche: Slides, Notizen</li>
-                <li class="TA">4. Woche: Slides, Notizen</li>
-                <li class="TA">5. Woche: Slides, Notizen</li>
-                <li class="TA">6. Woche: Slides, Notizen</li>
-                <li class="TA">7. Woche: Slides, Notizen</li>
-                <li class="TA">8. Woche: Slides, Notizen</li>
-                <li class="TA">9. Woche: Slides, Notizen</li>
-                <li class="TA">10. Woche: Slides, Notizen</li>
-                <li class="TA">11. Woche: Slides, Notizen</li>
-                <li class="TA">12. Woche: Slides, Notizen</li>
-                <li class="TA">13. Woche: Slides, Notizen</li>
-                <li class="TA">14. Woche: Slides, Notizen</li>
--->
+    <div class="wrap">
 
-            </ul>
-        </div>
-    </div>
-    <div id="Notes">
-        <h2>Notes</h2>
-        <div class="links">
-            <h4>Free Time Reading</h4>
-            <ul>
-		    <li><a href="./notes/electromagnetism.pdf">Electromagnetism</a></li>
-            <li><a href="./notes/qm.pdf">Quantum Mechanics</a></li>
-            </ul> 
-            <h4>University Notes</h4>
-        Bachelor Semester II
-        <ul>
-            <li><a href="./notes/analysis_II.pdf">Analysis II</a> (<a href="./summaries/analysis_II.pdf">Summary</a>, <a href="./anki/FS26__Analysis II__Vorlesung.apkg">Anki</a>)</li>
-            <li><a href="./notes/data_analysis.pdf">Datenanalyse in der Physik</a></li>
-            <li><a href="./notes/dsa.pdf">Datenstrukturen und Algorithmen</a> (<a href="./cheatsheets/dua.pdf">Cheat sheet</a>)</li>
-            <li><a href="./notes/linear_algebra.pdf">Lineare Algebra</a></li>
-            <li><a href="./notes/physik_II.pdf">Physik II</a></li>
-        </ul>
+        <nav class="site-nav">
+            <div class="mark"><strong>F. Krebser</strong> — notes &amp; teaching</div>
+            <div class="links">
+                <a href="./index.html" aria-current="page">Home</a>
+                <a href="./teaching.html">Teaching</a>
+            </div>
+        </nav>
 
-       Bachelor Semester I
-	    <ul>
-            <li><a href="./notes/analysis_I.pdf">Analysis I</a> (<a href="./summaries/analysis_I.pdf">Summary</a>, <a href="./anki/HS25__Analysis I__Vorlesung.apkg">Anki</a>)</li>
-		    <li><a href="./notes/linear_algebra.pdf">Lineare Algebra</a></li>
-            <li><a href="./notes/physik_I.pdf">Physik I</a></li>
-            <li><a href="./notes/informatik.pdf">Informatik</a> (<a href="./cheatsheets/informatik.pdf">Cheat sheet</a>)</li>
-            <li><a href="./notes/using_r_I.pdf">Using R for Data Analysis & Graphics (Part I)</a></li>
-	    </ul>
-        <h4>Lecture Notes</h4>
-        Astronomy Olympiad
-        <ul>
-            <li><a href="./teaching/2026_mathematical_methods.pdf">Mathematical Methods 2026</a> (<a href="./teaching/Exercises/2026_mathematical_methods.pdf">Exercises</a>, <a href="./teaching/Solutions/2026_mathematical_methods.pdf">Solutions</a>)</li>
-        </ul>
-        Physics Olympiad
-        <ul>
-            <li><a href="./teaching/2026_electromagnetism.pdf">Electromagnetism 2026</a></li>
-            <li><a href="./teaching/2026_data_analysis.pdf">Experimental Training 2026</a></li>
-        </ul>
+        <div class="hero" id="title">
+            <h1>Fynn Krebser</h1>
+            <h2 id="animate-title"></h2>
+            <p>
+                Welcome to my personal webpage! Here, you can find different notes
+                that I took over the years.
+            </p>
         </div>
-        
+
+        <section class="panel" id="TA">
+            <span class="panel-tag">Sec. A — Teaching</span>
+            <h2>Teaching Assistant</h2>
+            <p class="lede">Weekly slides and notes for the courses I TA.</p>
+            <div class="teaching-pointer">
+                <div class="course"><span>Current course</span>Informatik (HS26)</div>
+                <a class="btn" href="./teaching.html">View weekly materials &rarr;</a>
+            </div>
+        </section>
+
+        <section class="panel" id="Notes">
+            <span class="panel-tag">Sec. B — Notes</span>
+            <h2>Notes</h2>
+
+            <div class="group">
+                <h4>Free Time Reading</h4>
+                <ul>
+                    <li><a href="./notes/electromagnetism.pdf">Electromagnetism (Griffiths)</a></li>
+                    <!--<li><a href="./notes/qm.pdf">Quantum Mechanics</a></li>-->
+                </ul>
+            </div>
+
+            <div class="group">
+                <h4>University Notes</h4>
+                <div class="subgrid">
+                    <div>
+                        <h5>Bachelor Semester III</h5>
+                        <ul>
+                            <li><a href="./notes/alg_mech.pdf">Allgemeine Mechanik</a></li>
+                            <li><a href="./notes/funki.pdf">Funktionentheorie</a></li>
+                            <li><a href="./notes/mmp_I.pdf">Mathematische Methoden der Physik I</a> </li>
+                            <li><a href="./notes/physik_III.pdf">Physik III</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>Bachelor Semester II</h5>
+                        <ul>
+                            <li><a href="./notes/analysis_II.pdf">Analysis II</a> (<a href="./summaries/analysis_II.pdf">Summary</a>, <a href="./anki/FS26__Analysis II__Vorlesung.apkg">Anki</a>)</li>
+                            <li><a href="./notes/data_analysis.pdf">Datenanalyse in der Physik</a></li>
+                            <li><a href="./notes/dsa.pdf">Datenstrukturen und Algorithmen</a> (<a href="./cheatsheets/dua.pdf">Cheat sheet</a>)</li>
+                            <li><a href="./notes/linear_algebra.pdf">Lineare Algebra</a></li>
+                            <li><a href="./notes/physik_II.pdf">Physik II</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Bachelor Semester I</h5>
+                        <ul>
+                            <li><a href="./notes/analysis_I.pdf">Analysis I</a> (<a href="./summaries/analysis_I.pdf">Summary</a>, <a href="./anki/HS25__Analysis I__Vorlesung.apkg">Anki</a>)</li>
+                            <li><a href="./notes/linear_algebra.pdf">Lineare Algebra</a></li>
+                            <li><a href="./notes/physik_I.pdf">Physik I</a></li>
+                            <li><a href="./notes/informatik.pdf">Informatik</a> (<a href="./cheatsheets/informatik.pdf">Cheat sheet</a>)</li>
+                            <li><a href="./notes/using_r_I.pdf">Using R for Data Analysis &amp; Graphics (Part I)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group">
+                <h4>Lecture Notes</h4>
+                <div class="subgrid">
+                    <div>
+                        <h5>Astronomy Olympiad</h5>
+                        <ul>
+                            <li><a href="./teaching/2026_mathematical_methods.pdf">Mathematical Methods 2026</a> (<a href="./teaching/Exercises/2026_mathematical_methods.pdf">Exercises</a>, <a href="./teaching/Solutions/2026_mathematical_methods.pdf">Solutions</a>)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Physics Olympiad</h5>
+                        <ul>
+                            <li><a href="./teaching/2026_electromagnetism.pdf">Electromagnetism 2026</a></li>
+                            <li><a href="./teaching/2026_data_analysis.pdf">Experimental Training 2026</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="titleblock">
+            <div class="cell"><span>Name</span><strong>F. Krebser</strong></div>
+            <div class="cell"><span>Field</span><strong>Physics</strong></div>
+            <div class="cell"><span>Sheet</span><strong>01 / 02</strong></div>
+            <div class="cell"><span>Rev.</span><strong>2026</strong></div>
+        </div>
+
     </div>
     <script src="./script.js"></script>
 </body>

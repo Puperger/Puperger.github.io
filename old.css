@@ -1,0 +1,6 @@
+/* li with class TA: Make a 2 column layout */
+ul.TA {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
